@@ -4,9 +4,9 @@ import { SearchInput } from "../components/SearchInput";
 
 const Home = () => {
     return (
-        <div className="bg-white">
+        <div className="">
             <h1>Home Page Layout</h1>
-            <SearchInput />
+            <SearchInput onSearch={() => { }} />
             <CountryCardOverview />
             <CountryCardDetails />
         </div>
