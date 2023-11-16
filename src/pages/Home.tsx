@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CountryCardDetails } from "../components/CountryCardDetails";
 import { CountryCardOverviewList } from "../components/CountryCardOverviewList";
 import { SearchInput } from "../components/SearchInput";
-import { API_URL } from "../utils/constants/constants";
+import { API_GET_DEFAULT_FIELDS, API_URL } from "../utils/constants/constants";
 import { useFetch } from "../hooks/useFetch";
 import { Country } from "../interfaces/Country";
 import { HelpSection } from "../components/HelpSection";
@@ -13,7 +13,7 @@ const Home = () => {
     const [searchResults, setSearchResults] = useState<Country[]>([]);
     const [query, setQuery] = useState('');
     const { response, isLoading, error } = useFetch<Country[]>(
-        query ? `${API_URL}/${query}` : ''
+        query ? `${API_URL}/${query}${API_GET_DEFAULT_FIELDS}` : ''
     );
     const handleSearch = (newQuery: string) => {
         setQuery(newQuery);
