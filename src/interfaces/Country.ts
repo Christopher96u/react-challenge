@@ -9,10 +9,7 @@ export interface Country {
     status: string;
     unMember: boolean;
     currencies: {
-        [key: string]: {
-            name: string;
-            symbol: string;
-        };
+        [key: string]: Currency;
     };
     idd: Idd;
     capital: string[];
@@ -42,6 +39,11 @@ export interface Country {
 
 export interface CapitalInfo {
     latlng: number[];
+}
+
+export interface Currency {
+    name: string;
+    symbol: string;
 }
 
 export interface Car {
