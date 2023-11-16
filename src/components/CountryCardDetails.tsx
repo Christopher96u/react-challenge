@@ -8,9 +8,9 @@ const CountryCardDetails = () => {
             {selectedCountry ? (
                 <div className="w-full md:w-1/2 xl:w-1/3 bg-gray-100 border-gray-200 rounded-xl shadow mt-4">
                     <div className="p-5 flex flex-col justify-center">
-                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 h-20 flex items-center">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 h-20 flex items-center">
                             {selectedCountry.name.common}
-                        </h5>
+                        </h2>
                         <ul className="my-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-gray-400">
                             <li>Official name: {selectedCountry.name.official}</li>
                             <li>Currency name and symbol: {formatCurrency(selectedCountry.currencies)}</li>

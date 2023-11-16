@@ -36,14 +36,22 @@ const Home = () => {
     }, [query]);
 
     return (
-        <div className="">
-            <HelpSection />
-            <SearchInput onSearch={handleSearch} />
-            <CountryCardDetails />
-            {isLoading ? <Spinner /> : null}
-            {error ? <NotFound errorMessage={error.message} /> : null}
-            <CountryCardOverviewList countries={searchResults} />
-        </div>
+        <main>
+            <header>
+                <HelpSection />
+            </header>
+            <section>
+                <SearchInput onSearch={handleSearch} />
+            </section>
+            <section>
+                <CountryCardDetails />
+            </section>
+            <section>
+                {isLoading ? <Spinner /> : null}
+                {error ? <NotFound errorMessage={error.message} /> : null}
+                <CountryCardOverviewList countries={searchResults} />
+            </section>
+        </main>
     );
 };
 
