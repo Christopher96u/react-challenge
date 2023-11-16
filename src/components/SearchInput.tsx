@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import { useCountryContext } from "../context/CountryContext";
 
 interface SearchInputProps {
     onSearch: (query: string) => void;
@@ -6,11 +7,17 @@ interface SearchInputProps {
 
 const SearchInput = ({ onSearch }: SearchInputProps) => {
     const [query, setQuery] = useState('');
+    const { clearSelectedCountry } = useCountryContext();
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
         setQuery(inputValue);
-        onSearch(inputValue);
+        if (inputValue.trim() === '') {
+            clearSelectedCountry();
+        }
+        if (inputValue.length >= 2) {
+            onSearch(inputValue);
+        }
     };
 
     return (
