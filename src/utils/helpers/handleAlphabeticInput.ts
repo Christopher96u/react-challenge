@@ -5,3 +5,4 @@ const handleAlphabeticInput = (event: React.KeyboardEvent<HTMLInputElement>) => 
         event.preventDefault();
     }
 };
+export { handleAlphabeticInput };
