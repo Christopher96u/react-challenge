@@ -7,13 +7,13 @@ interface CountryCardOverviewProps {
 
 const CountryCardOverview = ({ country }: CountryCardOverviewProps) => {
 
-    const { selectedCountry, handleButtonClick } = useCountryContext();
+    const { handleButtonClick } = useCountryContext();
 
     const handleClick = () => {
         handleButtonClick(country);
     };
 
-    return (<div className="bg-gray-100 border-gray-200 rounded-xl shadow mt-4">
+    return (<div className="bg-gray-100 border-gray-200 rounded-xl shadow mt-4" data-testid="country-card-overview">
         <img src={country.flags.svg} alt={country.name.common} className="h-32 object-cover w-full rounded-t-xl" />
         <div className="p-5 flex flex-col justify-center">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 h-20 flex items-center">
