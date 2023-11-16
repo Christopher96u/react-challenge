@@ -13,7 +13,7 @@ const CountryCardOverview = ({ country }: CountryCardOverviewProps) => {
         handleButtonClick(country);
     };
 
-    return (<div className="bg-white border-gray-200 rounded-xl shadow mt-4">
+    return (<div className="bg-gray-100 border-gray-200 rounded-xl shadow mt-4">
         <img src={country.flags.svg} alt={country.name.common} className="h-32 object-cover w-full rounded-t-xl" />
         <div className="p-5 flex flex-col justify-center">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 h-20 flex items-center">

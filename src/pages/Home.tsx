@@ -5,6 +5,7 @@ import { SearchInput } from "../components/SearchInput";
 import { API_URL } from "../utils/constants/constants";
 import { useFetch } from "../hooks/useFetch";
 import { Country } from "../interfaces/Country";
+import { HelpSection } from "../components/HelpSection";
 
 const Home = () => {
     const [searchResults, setSearchResults] = useState<Country[]>([]);
@@ -31,7 +32,7 @@ const Home = () => {
 
     return (
         <div className="">
-            <h1>Home Page Layout</h1>
+            <HelpSection />
             <SearchInput onSearch={handleSearch} />
             <CountryCardDetails />
             {isLoading ? <p>Loading...</p> : null}
