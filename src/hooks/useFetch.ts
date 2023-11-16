@@ -16,9 +16,13 @@ const useFetch = <T>(url: string): FetchResult<T> => {
         setIsLoading(true);
         try {
             const res = await fetch(url);
+            if (!res.ok) {
+                setResponse(null);
+                throw new Error(`Sorry, we couldn't find any information. Please try again or check your search query`);
+            }
             const json = await res.json();
-            console.log(json);
             setResponse(json);
+            setError(null);
         } catch (error) {
             setError(error as Error);
         } finally {
@@ -28,6 +32,9 @@ const useFetch = <T>(url: string): FetchResult<T> => {
     useEffect(() => {
         if (url) {
             fetchData();
+        } else {
+            setResponse(null);
+            setError(null);
         }
     }, [url]);
 
