@@ -33,10 +33,10 @@ const Home = () => {
         <div className="">
             <h1>Home Page Layout</h1>
             <SearchInput onSearch={handleSearch} />
+            <CountryCardDetails />
             {isLoading ? <p>Loading...</p> : null}
             {error ? <p>{error.message}</p> : null}
             <CountryCardOverviewList countries={searchResults} />
-            <CountryCardDetails />
         </div>
     );
 };
