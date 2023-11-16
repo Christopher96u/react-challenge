@@ -33,6 +33,7 @@ To run all tests, use the command `npm run test`. For test coverage details, run
 5. I have created a context (CountryContext) to avoid prop drilling between components as they are separated by 2 levels from each other.
 6. I have extracted some of the logic used in the components into utility functions to reuse them in any component.
 7. I've created some tests to make sure the basic functionalities work.
+8. To avoid many requests to the API, I restricted the search to a minimum of two characters.
 ## Issues I've Encountered and Potential Improvements
 1. I would have liked to add a second parameter('options') to the custom hook useFetch to manage parameters, headers, among others. That would make the custom hook reusable for any more complex project.
 2. Only for this specific scenario, knowing that the country information I get is static, and it does't change. I would have fetched the data in the background at the beginning of the page load, and I would have saved the information of all the countries in LocalStorage or IndexedDB so I would only make a single call to the API and the performance would be better since it would not handle asynchronous data, even I wouldn't need the Spinner component.
